@@ -30,7 +30,10 @@ jobs:
 
       - name: Install dependencies
         working-directory: bigchase-music
-        run: npm ci
+        run: npm install
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Build
         working-directory: bigchase-music
