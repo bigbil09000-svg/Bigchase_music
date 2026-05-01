@@ -1,0 +1,9 @@
+{
+  "name": "bigchase-music-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix bigchase-music run dev",
+    "build": "npm --prefix bigchase-music run build",
+    "preview": "npm --prefix bigchase-music run preview"
+  }
+}
