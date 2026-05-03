@@ -23,6 +23,7 @@ export default function Navbar() {
           loop
           muted
           playsInline
+          loading="lazy"
           className="m-0 p-0 h-full max-h-32 w-auto object-contain"
           style={{ filter: 'drop-shadow(0 0 18px rgba(180, 120, 40, 0.7)) drop-shadow(0 4px 12px rgba(120, 70, 10, 0.5))' }}
         />

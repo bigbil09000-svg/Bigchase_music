@@ -11,7 +11,7 @@ function Footer() {
   return (
     <footer className="border-t border-gray-800 px-10 py-10">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <img src={logo} alt="BigChase Music" className="h-12 w-auto object-contain opacity-90" />
+        <img src={logo} alt="BigChase Music" className="h-12 w-auto object-contain opacity-90" loading="lazy" />
         <p className="text-gray-600 text-sm text-center">
           &copy; {new Date().getFullYear()} BigChase Music. All rights reserved.
         </p>
