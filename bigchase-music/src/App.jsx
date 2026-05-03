@@ -27,7 +27,7 @@ function Footer() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <div className="relative bg-black text-white min-h-screen font-sans">
         {/* Fixed faded background */}
         <div
