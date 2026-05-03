@@ -17,7 +17,7 @@ export default function Music() {
           <div className="flex-1 text-left">
             <p className="text-yellow-500 text-xs tracking-widest uppercase mb-2">New EP</p>
             <h3 className="text-3xl font-extrabold mb-1">Prophetic Declarations</h3>
-            <p className="text-gray-500 text-sm mb-6">4 Tracks &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; BigChase Music</p>
+            <p className="text-gray-500 text-sm mb-6">4 Tracks &nbsp;·&nbsp; Available May 10, 2026 &nbsp;·&nbsp; BigChase Music</p>
 
             <p className="text-gray-400 leading-relaxed mb-8 max-w-md">
               A carefully crafted collection of tracks that blends raw emotion with refined production.
