@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import logo from './assets/yrka1.png'
+import logoWebp from './assets/yrka1.webp'
+import logoPng from './assets/yrka1.png'
+import bgImgWebp from './assets/sLabY.webp'
 import bgImg from './assets/sLabY.png'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
@@ -11,7 +13,10 @@ function Footer() {
   return (
     <footer className="border-t border-gray-800 px-10 py-10">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <img src={logo} alt="BigChase Music" className="h-12 w-auto object-contain opacity-90" loading="lazy" />
+        <picture>
+          <source srcSet={logoWebp} type="image/webp" />
+          <img src={logoPng} alt="BigChase Music" className="h-12 w-auto object-contain opacity-90" loading="lazy" />
+        </picture>
         <p className="text-gray-600 text-sm text-center">
           &copy; {new Date().getFullYear()} BigChase Music. All rights reserved.
         </p>

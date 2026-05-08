@@ -1,3 +1,4 @@
+import coverArtWebp from '../assets/design (1).webp'
 import coverArt from '../assets/design (1).png'
 
 export default function Music() {
@@ -10,7 +11,10 @@ export default function Music() {
         <div className="flex flex-col md:flex-row gap-10 items-center bg-gray-900/80 border border-gray-800 rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
           {/* Cover Art */}
           <div className="w-full md:w-72 flex-shrink-0 rounded-2xl overflow-hidden shadow-2xl shadow-black/60 ring-1 ring-white/10">
-            <img src={coverArt} alt="EP Cover Art" className="w-full h-auto object-cover block" loading="lazy" />
+            <picture>
+              <source srcSet={coverArtWebp} type="image/webp" />
+              <img src={coverArt} alt="EP Cover Art" className="w-full h-auto object-cover block" loading="lazy" />
+            </picture>
           </div>
 
           {/* Info */}

@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
-import logo from '../assets/yrka1.png'
+import logoWebp from '../assets/yrka1.webp'
+import logoPng from '../assets/yrka1.png'
 import logoVideo from '../assets/a3e5.mp4'
 
 export default function Navbar() {
@@ -13,7 +14,7 @@ export default function Navbar() {
   return (
     <nav
       className="relative flex h-36 items-center justify-between overflow-hidden border-b border-yellow-900/40 bg-cover bg-center bg-no-repeat px-10"
-      style={{ backgroundImage: `url(${logo})` }}
+      style={{ backgroundImage: `url(${logoPng})` }}
     >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
       <NavLink to="/" className="relative z-10 m-0 p-0 leading-none">
