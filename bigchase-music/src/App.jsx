@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import logoWebp from './assets/yrka1.webp'
 import logoPng from './assets/yrka1.png'
 import bgImgWebp from './assets/sLabY.webp'
@@ -7,6 +8,17 @@ import Home from './pages/Home'
 import Music from './pages/Music'
 import About from './pages/About'
 import Contact from './pages/Contact'
+
+// External redirect component — sends user to an outside URL
+function ExternalRedirect({ to }) {
+  useEffect(() => { window.location.replace(to) }, [to])
+  return (
+    <div className="flex min-h-[50vh] flex-col items-center justify-center gap-3 text-zinc-400">
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-yellow-500 border-t-transparent" />
+      <p className="text-sm tracking-widest uppercase">Redirecting…</p>
+    </div>
+  )
+}
 
 function Footer() {
   return (
@@ -45,6 +57,23 @@ export default function App() {
               <Route path="/music" element={<Music />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+
+              {/* ── Short branded URLs ── */}
+              {/* Internal redirects */}
+              <Route path="/listen" element={<Navigate to="/music" replace />} />
+              <Route path="/ep" element={<Navigate to="/music" replace />} />
+              <Route path="/new" element={<Navigate to="/music" replace />} />
+              <Route path="/story" element={<Navigate to="/about" replace />} />
+              <Route path="/book" element={<Navigate to="/contact" replace />} />
+              <Route path="/booking" element={<Navigate to="/contact" replace />} />
+
+              {/* External redirects */}
+              <Route path="/yt" element={<ExternalRedirect to="https://www.youtube.com/channel/UCPWEZ7W6EdZZEb7W7_aQ28Q" />} />
+              <Route path="/youtube" element={<ExternalRedirect to="https://www.youtube.com/channel/UCPWEZ7W6EdZZEb7W7_aQ28Q" />} />
+              <Route path="/ig" element={<ExternalRedirect to="https://www.instagram.com/bigchasemusic" />} />
+              <Route path="/instagram" element={<ExternalRedirect to="https://www.instagram.com/bigchasemusic" />} />
+              <Route path="/tiktok" element={<ExternalRedirect to="https://www.tiktok.com/@bigchasemusic" />} />
+              <Route path="/spotify" element={<ExternalRedirect to="https://open.spotify.com/artist/bigchasemusic" />} />
             </Routes>
           </main>
           <Footer />
