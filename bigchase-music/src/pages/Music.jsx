@@ -87,7 +87,7 @@ export default function Music() {
                     🎵 TIDAL
                   </a>
                   <a
-                    href="https://link.deezer.com/s/33ejo5tpNqoOLo6nVhxqQ"
+                    href="https://link.deezer.com/s/33eoGfO2xOvTszYk2DbwT"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
