@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom'
-import logoWebp from '../assets/yrka1.webp'
 import logoPng from '../assets/yrka1.png'
 import logoVideo from '../assets/a3e5.mp4'
 
@@ -13,11 +12,12 @@ export default function Navbar() {
 
   return (
     <nav
-      className="relative flex h-36 items-center justify-between overflow-hidden border-b border-yellow-900/40 bg-cover bg-center bg-no-repeat px-10"
+      className="relative overflow-hidden border-b border-yellow-900/40 bg-cover bg-center bg-no-repeat px-4 py-4 sm:px-8"
       style={{ backgroundImage: `url(${logoPng})` }}
     >
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-      <NavLink to="/" className="relative z-10 m-0 p-0 leading-none">
+      <div className="absolute inset-0 bg-black/65 backdrop-blur-sm"></div>
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center gap-4 sm:flex-row sm:justify-between">
+        <NavLink to="/" className="m-0 p-0 leading-none">
         <video
           src={logoVideo}
           autoPlay
@@ -25,15 +25,16 @@ export default function Navbar() {
           muted
           playsInline
           loading="lazy"
-          className="m-0 p-0 h-full max-h-32 w-auto object-contain"
+          className="m-0 h-28 w-auto object-contain p-0 sm:h-40"
           style={{ filter: 'drop-shadow(0 0 18px rgba(180, 120, 40, 0.7)) drop-shadow(0 4px 12px rgba(120, 70, 10, 0.5))' }}
         />
       </NavLink>
-      <div className="relative z-10 flex items-center gap-10">
-        <NavLink to="/" className={linkClass}>Home</NavLink>
-        <NavLink to="/music" className={linkClass}>Music</NavLink>
-        <NavLink to="/about" className={linkClass}>About</NavLink>
-        <NavLink to="/contact" className={linkClass}>Contact</NavLink>
+        <div className="grid w-full max-w-md grid-cols-4 items-center gap-2 text-center sm:w-auto sm:gap-8">
+          <NavLink to="/" className={linkClass}>Home</NavLink>
+          <NavLink to="/music" className={linkClass}>Music</NavLink>
+          <NavLink to="/about" className={linkClass}>About</NavLink>
+          <NavLink to="/contact" className={linkClass}>Contact</NavLink>
+        </div>
       </div>
     </nav>
   )
