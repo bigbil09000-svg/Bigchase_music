@@ -45,9 +45,9 @@ export default function App() {
   return (
     <BrowserRouter basename="/">
       <div className="relative min-h-screen overflow-hidden bg-black text-white font-sans">
-        <div className="pointer-events-none fixed inset-0 opacity-25" style={{ backgroundImage: `url(${bgImgWebp})`, backgroundPosition: 'center', backgroundSize: 'cover' }} />
+        <div className="pointer-events-none fixed inset-0 opacity-35" style={{ backgroundImage: `url(${bgImgWebp})`, backgroundPosition: 'center', backgroundSize: 'cover' }} />
         <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(212,165,61,0.17),transparent_34%),radial-gradient(circle_at_80%_0%,rgba(212,165,61,0.08),transparent_38%)]" />
-        <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-black/70 via-black/82 to-black" />
+        <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-black/58 via-black/76 to-black" />
 
         <div className="relative z-10">
           <Navbar />
