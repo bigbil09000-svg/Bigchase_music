@@ -84,6 +84,13 @@ export default function Music() {
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
                   >
+                     🎵 Audiomark
+                    <a
+                    href="https://audiomack.com/bigchase_music"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
+                  ></a>
                     🎵 TIDAL
                   </a>
                   <a
