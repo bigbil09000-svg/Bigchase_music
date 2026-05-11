@@ -5,6 +5,12 @@ export default function Contact() {
         <p className="text-yellow-500 text-xs font-bold tracking-[0.35em] uppercase text-center mb-3">Get In Touch</p>
         <h2 className="text-4xl font-extrabold text-center mb-4 tracking-tight">Contact Us</h2>
         <p className="text-gray-500 text-center mb-10">For bookings, features, and business inquiries.</p>
+        <p className="text-center text-sm text-zinc-300 -mt-6 mb-10">
+          Email:{' '}
+          <a href="mailto:contact@bigchasemusic.com" className="text-yellow-400 hover:text-yellow-300 underline underline-offset-4">
+            contact@bigchasemusic.com
+          </a>
+        </p>
 
         <form action="https://formspree.io/f/mgodegwk" method="POST" className="flex flex-col gap-4">
           <div className="flex gap-4">
