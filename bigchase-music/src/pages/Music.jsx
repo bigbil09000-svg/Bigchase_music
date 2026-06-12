@@ -1,5 +1,5 @@
-import coverArtWebp from '../assets/design.webp'
-import coverArt from '../assets/design (1).png'
+import coverArtWebp from '../assets/Untitled.webp'
+import coverArt from '../assets/Untitled.png'
 import artistWebp from '../assets/yrka1.webp'
 import artistPng from '../assets/yrka1.png'
 
@@ -42,13 +42,12 @@ export default function Music() {
             </div>
 
             <div>
-              <p className="mb-2 text-xs uppercase tracking-[0.28em] text-yellow-500">New EP</p>
-              <h3 className="mb-2 text-3xl font-black sm:text-4xl">Prophetic Declarations</h3>
-              <p className="mb-5 text-sm text-zinc-400">4 Tracks · Available Now!</p>
+              <p className="mb-2 text-xs uppercase tracking-[0.28em] text-yellow-500">New Single</p>
+              <h3 className="mb-2 text-3xl font-black sm:text-4xl">Don't Stop Here</h3>
+              <p className="mb-5 text-sm text-zinc-400">Available Now!</p>
 
               <p className="mb-8 max-w-2xl text-sm leading-relaxed text-zinc-300 sm:text-base">
-                A premium, soul-forward release built with cinematic textures, bold drums, and scripture-rooted lyrics.
-                Every track is crafted to uplift faith, sharpen focus, and keep your spirit moving.
+                The latest single from BigChase Music. Stream now on all major platforms and get caught up in the movement.
               </p>
 
               <div className="mb-8">
