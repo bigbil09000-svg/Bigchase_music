@@ -72,7 +72,7 @@ export default function Music() {
                     🎵 Spotify
                   </a>
                   <a
-                    href="https://youtube.com/channel/UC87JYhXyU94z_OBhE6PoMWQ?si=1HzaPevCRkumLR00"
+                    href="https://youtube.com/@bigchase_music?si=K5wXnsv6i-kH9a0b"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
@@ -128,7 +128,7 @@ export default function Music() {
                     🔥 Follow on TikTok
                   </a>
                   <a
-                    href="https://www.youtube.com/@BigChase_Music"
+                    href="https://youtube.com/@bigchase_music?si=K5wXnsv6i-kH9a0b"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-full border border-yellow-700/70 bg-zinc-900 px-5 py-2.5 text-sm font-bold text-yellow-200 transition-all duration-200 hover:border-yellow-500 hover:text-yellow-100"
@@ -202,7 +202,7 @@ export default function Music() {
                     🎵 Spotify
                   </a>
                   <a
-                    href="https://youtube.com/channel/UC87JYhXyU94z_OBhE6PoMWQ?si=1HzaPevCRkumLR00"
+                    href="https://youtube.com/@bigchase_music?si=K5wXnsv6i-kH9a0b"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"

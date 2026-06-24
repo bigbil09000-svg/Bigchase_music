@@ -68,8 +68,8 @@ export default function App() {
               <Route path="/booking" element={<Navigate to="/contact" replace />} />
 
               {/* External redirects */}
-              <Route path="/yt" element={<ExternalRedirect to="https://www.youtube.com/channel/UCPWEZ7W6EdZZEb7W7_aQ28Q" />} />
-              <Route path="/youtube" element={<ExternalRedirect to="https://www.youtube.com/channel/UCPWEZ7W6EdZZEb7W7_aQ28Q" />} />
+              <Route path="/yt" element={<ExternalRedirect to="https://youtube.com/@bigchase_music?si=K5wXnsv6i-kH9a0b" />} />
+              <Route path="/youtube" element={<ExternalRedirect to="https://youtube.com/@bigchase_music?si=K5wXnsv6i-kH9a0b" />} />
               <Route path="/ig" element={<ExternalRedirect to="https://www.instagram.com/bigchasemusic" />} />
               <Route path="/instagram" element={<ExternalRedirect to="https://www.instagram.com/bigchasemusic" />} />
               <Route path="/tiktok" element={<ExternalRedirect to="https://www.tiktok.com/@bigchasemusic" />} />
