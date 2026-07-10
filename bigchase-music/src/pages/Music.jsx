@@ -64,7 +64,7 @@ export default function Music() {
                     🎵 Apple Music
                   </a>
                   <a
-                    href="https://open.spotify.com/artist/5MYZVo1JksOviGgh2wNh8s?si=xd3lEyRRQa6ntcuKgI-SWw&nd=1&dlsi=8b37e52f033a4712"
+                    href="https://open.spotify.com/track/2HLlZt3ombCKwHLAiU7pqx?si=5604812e70c2431c"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"

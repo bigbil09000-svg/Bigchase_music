@@ -73,7 +73,7 @@ export default function App() {
               <Route path="/ig" element={<ExternalRedirect to="https://www.instagram.com/bigchasemusic" />} />
               <Route path="/instagram" element={<ExternalRedirect to="https://www.instagram.com/bigchasemusic" />} />
               <Route path="/tiktok" element={<ExternalRedirect to="https://www.tiktok.com/@bigchasemusic" />} />
-              <Route path="/spotify" element={<ExternalRedirect to="https://open.spotify.com/artist/bigchasemusic" />} />
+              <Route path="/spotify" element={<ExternalRedirect to="https://open.spotify.com/track/2HLlZt3ombCKwHLAiU7pqx?si=5604812e70c2431c" />} />
             </Routes>
           </main>
           <Footer />
