@@ -46,9 +46,9 @@ export default function Music() {
             </div>
 
             <div>
-              <p className="mb-2 text-xs uppercase tracking-[0.28em] text-yellow-500">New Single Out Today</p>
+              <p className="mb-2 text-xs uppercase tracking-[0.28em] text-yellow-500">Available Now</p>
               <h3 className="mb-2 text-3xl font-black sm:text-4xl">Guiding Lighting</h3>
-              <p className="mb-5 text-sm text-zinc-400">Single · Out Today!</p>
+              <p className="mb-5 text-sm text-zinc-400">Single · Available Now</p>
 
               <p className="mb-8 max-w-2xl text-sm leading-relaxed text-zinc-300 sm:text-base">
                 BigChase Music just dropped a brand new single. Stream Guiding Lighting now and be among the first to hear it today.
@@ -58,7 +58,7 @@ export default function Music() {
                 <p className="mb-3 text-[0.7rem] font-bold uppercase tracking-[0.35em] text-yellow-500/90">Streaming Platforms</p>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
                   <a
-                    href="https://music.apple.com/gb/artist/bigchase-music/1895686161"
+                    href="https://music.apple.com/gb/song/guiding-lighting/6787206467"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
@@ -66,15 +66,15 @@ export default function Music() {
                     🎵 Apple Music
                   </a>
                   <a
-                    href="https://open.spotify.com/track/2HLlZt3ombCKwHLAiU7pqx?si=5604812e70c2431c"
+                    href="https://open.spotify.com/track/2HLlZt3ombCKwHLAiU7pqx"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
                   >
-                    🎵 Spotify (New Single)
+                    🎵 Spotify
                   </a>
                   <a
-                    href="https://youtube.com/@bigchase_music?si=K5wXnsv6i-kH9a0b"
+                    href="http://www.youtube.com/@BigChase_Music"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
@@ -83,7 +83,7 @@ export default function Music() {
                   </a>
                   
                   <a
-                    href="https://audiomack.com/bigchase_music"
+                    href="https://audiomack.com/bigchase_music/song/guiding-lighting"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
@@ -92,7 +92,7 @@ export default function Music() {
                   </a>
                   
                   <a
-                    href="https://tidal.com/artist/78709665/u"
+                    href="https://tidal.com/track/539642973"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
@@ -100,7 +100,7 @@ export default function Music() {
                     🎵 TIDAL
                   </a>
                   <a
-                    href="https://link.deezer.com/s/33eoGfO2xOvTszYk2DbwT"
+                    href="https://www.deezer.com/track/4129771121"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
@@ -130,7 +130,7 @@ export default function Music() {
                     🔥 Follow on TikTok
                   </a>
                   <a
-                    href="https://youtube.com/@bigchase_music?si=K5wXnsv6i-kH9a0b"
+                    href="http://www.youtube.com/@BigChase_Music"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-full border border-yellow-700/70 bg-zinc-900 px-5 py-2.5 text-sm font-bold text-yellow-200 transition-all duration-200 hover:border-yellow-500 hover:text-yellow-100"
@@ -200,10 +200,10 @@ export default function Music() {
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
                   >
-                    🎵 Spotify (Don't Stop Here)
+                    🎵 Spotify 
                   </a>
                   <a
-                    href="https://youtube.com/@bigchase_music?si=K5wXnsv6i-kH9a0b"
+                    href="http://www.youtube.com/@BigChase_Music"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
