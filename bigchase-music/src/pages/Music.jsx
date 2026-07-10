@@ -1,5 +1,3 @@
-import coverArtWebp from '../assets/Untitled.webp'
-import coverArt from '../assets/Untitled.png'
 import epCoverWebp from '../assets/design.webp'
 import epCover from '../assets/design (1).png'
 import artistWebp from '../assets/yrka1.webp'
@@ -17,10 +15,12 @@ export default function Music() {
           <div className="grid gap-8 p-5 sm:p-8 lg:grid-cols-[320px,1fr] lg:gap-12">
             <div className="mx-auto w-full max-w-sm lg:max-w-none">
               <div className="overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[0_20px_45px_rgba(0,0,0,0.55)]">
-                <picture>
-                  <source srcSet={coverArtWebp} type="design/webp" />
-                  <img src={coverArt} alt="Prophetic Declarations EP cover art" className="block h-auto w-full object-cover" loading="lazy" />
-                </picture>
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e024f2038104b0b39b3bbf41d19"
+                  alt="Guiding Lighting single cover art"
+                  className="block h-auto w-full object-cover"
+                  loading="lazy"
+                />
               </div>
 
               <div className="mt-5 rounded-2xl border border-yellow-900/30 bg-zinc-950/80 p-4">
@@ -44,12 +44,12 @@ export default function Music() {
             </div>
 
             <div>
-              <p className="mb-2 text-xs uppercase tracking-[0.28em] text-yellow-500">New Single</p>
-              <h3 className="mb-2 text-3xl font-black sm:text-4xl">Don't Stop Here</h3>
-              <p className="mb-5 text-sm text-zinc-400">Available Now!</p>
+              <p className="mb-2 text-xs uppercase tracking-[0.28em] text-yellow-500">New Single Out Today</p>
+              <h3 className="mb-2 text-3xl font-black sm:text-4xl">Guiding Lighting</h3>
+              <p className="mb-5 text-sm text-zinc-400">Single · Out Today!</p>
 
               <p className="mb-8 max-w-2xl text-sm leading-relaxed text-zinc-300 sm:text-base">
-                The latest single from BigChase Music. Stream now on all major platforms and get caught up in the movement.
+                BigChase Music just dropped a brand new single. Stream Guiding Lighting now and be among the first to hear it today.
               </p>
 
               <div className="mb-8">
@@ -69,7 +69,7 @@ export default function Music() {
                     rel="noreferrer"
                     className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-semibold text-zinc-100 transition-all duration-200 hover:border-yellow-600/70 hover:text-yellow-300"
                   >
-                    🎵 Spotify
+                    🎵 Spotify (New Single)
                   </a>
                   <a
                     href="https://youtube.com/@bigchase_music?si=K5wXnsv6i-kH9a0b"
