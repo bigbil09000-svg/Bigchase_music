@@ -48,6 +48,20 @@ export default function Home() {
               <p className="text-yellow-500 text-[0.68rem] font-semibold tracking-[0.2em] uppercase mb-3">Single</p>
               <h3 className="text-xl font-black mb-2 group-hover:text-yellow-300 transition-colors">Guiding Lighting</h3>
               <p className="text-zinc-400 text-sm leading-relaxed mb-4">New single out now. Choose your platform.</p>
+              <div className="mb-4 overflow-hidden rounded-xl border border-zinc-700/80 bg-zinc-900/60">
+                <iframe
+                  title="Guiding Lighting Spotify Embed"
+                  src="https://open.spotify.com/embed/album/284aFe5DkKuHcQfrfB5Anf?utm_source=generator&si=e3b215ec11e0413f"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  style={{ borderRadius: '12px' }}
+                  className="block"
+                />
+              </div>
               <p className="text-[0.65rem] uppercase tracking-[0.16em] text-zinc-500 mb-3">Stream On</p>
               <div className="grid grid-cols-2 gap-2 text-sm">
                 <a href="https://music.apple.com/gb/song/guiding-lighting/6787206467" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Apple</a>
@@ -64,6 +78,17 @@ export default function Home() {
               <p className="text-yellow-500 text-[0.68rem] font-semibold tracking-[0.2em] uppercase mb-3">Single</p>
               <h3 className="text-xl font-black mb-2 group-hover:text-yellow-300 transition-colors">Don't Stop Here</h3>
               <p className="text-zinc-400 text-sm leading-relaxed mb-4">Fan favorite single available now. Choose your platform.</p>
+              <div className="mb-4 overflow-hidden rounded-xl border border-zinc-700/80 bg-zinc-900/60">
+                <iframe
+                  title="Don't Stop Here Spotify Embed"
+                  src="https://open.spotify.com/embed/album/5y7oVwkDW7fvJSM3p9U1vK?utm_source=generator&si=f4acc5f6c06a4509"
+                  width="100%"
+                  height="352"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  className="block"
+                />
+              </div>
               <p className="text-[0.65rem] uppercase tracking-[0.16em] text-zinc-500 mb-3">Stream On</p>
               <div className="grid grid-cols-2 gap-2 text-sm">
                 <a href="https://music.apple.com/gb/album/dont-stop-here-single/6778704531" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Apple</a>
@@ -80,6 +105,20 @@ export default function Home() {
               <p className="text-yellow-500 text-[0.68rem] font-semibold tracking-[0.2em] uppercase mb-3">EP</p>
               <h3 className="text-xl font-black mb-2 group-hover:text-yellow-300 transition-colors">Prophetic Declarations</h3>
               <p className="text-zinc-400 text-sm leading-relaxed mb-4">4-track EP available now. Choose your platform.</p>
+              <div className="mb-4 overflow-hidden rounded-xl border border-zinc-700/80 bg-zinc-900/60">
+                <iframe
+                  title="Prophetic Declarations Spotify Embed"
+                  src="https://open.spotify.com/embed/album/4j3nWINWNwY8dfoORZgGD0?utm_source=generator&si=5b03f7b1074d4c12"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  style={{ borderRadius: '12px' }}
+                  className="block"
+                />
+              </div>
               <p className="text-[0.65rem] uppercase tracking-[0.16em] text-zinc-500 mb-3">Stream On</p>
               <div className="grid grid-cols-2 gap-2 text-sm">
                 <a href="https://music.apple.com/gb/album/prophetic-declarations-ep/1895711445" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Apple</a>
