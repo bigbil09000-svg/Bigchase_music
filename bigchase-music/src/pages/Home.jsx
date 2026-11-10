@@ -1,134 +1,100 @@
 import { Link } from 'react-router-dom'
+import { releases, ARTIST } from '../data/site'
+import StreamLinks, { SpotifyEmbed } from '../components/StreamLinks'
+import SocialLinks from '../components/SocialLinks'
+import Newsletter from '../components/Newsletter'
+import usePageMeta from '../hooks/usePageMeta'
 
 export default function Home() {
+  usePageMeta('')
+  const latest = releases[0]
+
   return (
     <>
       {/* ── HERO ── */}
-      <section className="flex flex-col items-center justify-center text-center py-36 px-6">
-        <p className="text-yellow-500 text-xs font-bold tracking-[0.35em] uppercase mb-4">Independent Record Label</p>
-        <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 tracking-tight">
+      <section className="flex flex-col items-center justify-center px-6 py-28 text-center sm:py-36">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-yellow-500">{ARTIST.genre}</p>
+        <h1 className="mb-6 text-5xl font-extrabold leading-tight tracking-tight md:text-7xl">
           BigChase <span className="text-yellow-400">Music</span>
-        </h2>
-        <p className="max-w-lg text-gray-400 text-lg leading-relaxed mb-10">
+        </h1>
+        <p className="mb-4 max-w-lg text-lg leading-relaxed text-gray-400">
           Where passion meets purpose. Authentic sound crafted to inspire,
           uplift, and move the soul.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
+        <p className="mb-10 text-sm text-zinc-300">
+          <span className="mr-2 rounded-full bg-yellow-500/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-yellow-300">Out Now</span>
+          {latest.title} — {latest.type}
+        </p>
+        <div className="mb-10 flex flex-wrap justify-center gap-4">
+          <a
+            href={latest.links.spotify}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full bg-yellow-500 px-8 py-3 font-bold tracking-wide text-black shadow-lg shadow-yellow-500/20 transition-all duration-200 hover:bg-yellow-400"
+          >
+            Stream "{latest.title}"
+          </a>
           <Link
             to="/music"
-            className="bg-yellow-500 text-black px-8 py-3 rounded-full font-bold tracking-wide hover:bg-yellow-400 transition-all duration-200 shadow-lg shadow-yellow-500/20"
+            className="rounded-full border border-gray-600 px-8 py-3 font-semibold tracking-wide text-gray-300 transition-all duration-200 hover:border-yellow-500 hover:text-yellow-400"
           >
-            Listen Now
-          </Link>
-          <Link
-            to="/about"
-            className="border border-gray-600 text-gray-300 px-8 py-3 rounded-full font-semibold tracking-wide hover:border-yellow-500 hover:text-yellow-400 transition-all duration-200"
-          >
-            Our Story
+            All Music
           </Link>
         </div>
+        <SocialLinks />
       </section>
 
       {/* ── DIVIDER ── */}
       <div className="flex items-center gap-4 px-10 py-2">
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-700/40 to-transparent"></div>
-        <span className="text-yellow-600 text-xs tracking-widest uppercase">Now Playing</span>
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-700/40 to-transparent"></div>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-yellow-700/40 to-transparent"></div>
+        <span className="text-xs uppercase tracking-widest text-yellow-600">Now Playing</span>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-yellow-700/40 to-transparent"></div>
       </div>
 
       {/* ── LATEST RELEASES ── */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-yellow-500 text-xs font-bold tracking-[0.35em] uppercase mb-2 text-center">Available Now</p>
-          <h3 className="text-center text-2xl sm:text-3xl font-black tracking-tight mb-3">Latest Releases</h3>
-          <p className="text-center text-sm text-zinc-400 max-w-2xl mx-auto mb-8">Choose your favorite platform and stream instantly.</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="group relative overflow-hidden bg-gradient-to-b from-zinc-900/95 to-black border border-zinc-800 rounded-2xl p-6 hover:border-yellow-600/70 transition-all duration-200 shadow-[0_16px_45px_rgba(0,0,0,0.35)]">
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-yellow-500/70 to-transparent" />
-              <p className="text-yellow-500 text-[0.68rem] font-semibold tracking-[0.2em] uppercase mb-3">Single</p>
-              <h3 className="text-xl font-black mb-2 group-hover:text-yellow-300 transition-colors">Guiding Lighting</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed mb-4">New single out now. Choose your platform.</p>
-              <div className="mb-4 overflow-hidden rounded-xl border border-zinc-700/80 bg-zinc-900/60">
-                <iframe
-                  title="Guiding Lighting Spotify Embed"
-                  src="https://open.spotify.com/embed/album/284aFe5DkKuHcQfrfB5Anf?utm_source=generator&si=e3b215ec11e0413f"
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
-                  allowFullScreen
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                  style={{ borderRadius: '12px' }}
-                  className="block"
-                />
+      <section className="px-6 py-20">
+        <div className="mx-auto max-w-6xl">
+          <p className="mb-2 text-center text-xs font-bold uppercase tracking-[0.35em] text-yellow-500">Available Now</p>
+          <h2 className="mb-3 text-center text-2xl font-black tracking-tight sm:text-3xl">Latest Releases</h2>
+          <p className="mx-auto mb-8 max-w-2xl text-center text-sm text-zinc-400">Choose your favorite platform and stream instantly.</p>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {releases.map(r => (
+              <div
+                key={r.id}
+                className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-gradient-to-b from-zinc-900/95 to-black p-6 shadow-[0_16px_45px_rgba(0,0,0,0.35)] transition-all duration-200 hover:border-yellow-600/70"
+              >
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-yellow-500/70 to-transparent" />
+                <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-yellow-500">{r.type} · {r.status}</p>
+                <h3 className="mb-4 text-xl font-black transition-colors group-hover:text-yellow-300">{r.title}</h3>
+                <div className="mb-4 overflow-hidden rounded-xl border border-zinc-700/80 bg-zinc-900/60">
+                  <SpotifyEmbed src={r.spotifyEmbed} title={r.title} />
+                </div>
+                <p className="mb-3 text-[0.65rem] uppercase tracking-[0.16em] text-zinc-500">Stream On</p>
+                <StreamLinks links={r.links} compact />
               </div>
-              <p className="text-[0.65rem] uppercase tracking-[0.16em] text-zinc-500 mb-3">Stream On</p>
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <a href="https://music.apple.com/gb/song/guiding-lighting/6787206467" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Apple</a>
-                <a href="https://open.spotify.com/track/2HLlZt3ombCKwHLAiU7pqx" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Spotify</a>
-                <a href="http://www.youtube.com/@BigChase_Music" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">YouTube</a>
-                <a href="https://audiomack.com/bigchase_music/song/guiding-lighting" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Audiomack</a>
-                <a href="https://tidal.com/track/539642973" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">TIDAL</a>
-                <a href="https://www.deezer.com/track/4129771121" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Deezer</a>
-              </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="group relative overflow-hidden bg-gradient-to-b from-zinc-900/95 to-black border border-zinc-800 rounded-2xl p-6 hover:border-yellow-600/70 transition-all duration-200 shadow-[0_16px_45px_rgba(0,0,0,0.35)]">
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-yellow-500/70 to-transparent" />
-              <p className="text-yellow-500 text-[0.68rem] font-semibold tracking-[0.2em] uppercase mb-3">Single</p>
-              <h3 className="text-xl font-black mb-2 group-hover:text-yellow-300 transition-colors">Don't Stop Here</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed mb-4">Fan favorite single available now. Choose your platform.</p>
-              <div className="mb-4 overflow-hidden rounded-xl border border-zinc-700/80 bg-zinc-900/60">
-                <iframe
-                  title="Don't Stop Here Spotify Embed"
-                  src="https://open.spotify.com/embed/album/5y7oVwkDW7fvJSM3p9U1vK?utm_source=generator&si=f4acc5f6c06a4509"
-                  width="100%"
-                  height="352"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                  className="block"
-                />
-              </div>
-              <p className="text-[0.65rem] uppercase tracking-[0.16em] text-zinc-500 mb-3">Stream On</p>
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <a href="https://music.apple.com/gb/album/dont-stop-here-single/6778704531" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Apple</a>
-                <a href="https://open.spotify.com/track/3cWUtJyDv505XmNatOstQQ" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Spotify</a>
-                <a href="http://www.youtube.com/@BigChase_Music" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">YouTube</a>
-                <a href="https://audiomack.com/bigchase_music" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Audiomack</a>
-                <a href="https://tidal.com/artist/78709665/u" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">TIDAL</a>
-                <a href="https://link.deezer.com/s/33eoGfO2xOvTszYk2DbwT" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Deezer</a>
-              </div>
-            </div>
+      {/* ── NEWSLETTER ── */}
+      <Newsletter />
 
-            <div className="group relative overflow-hidden bg-gradient-to-b from-zinc-900/95 to-black border border-zinc-800 rounded-2xl p-6 hover:border-yellow-600/70 transition-all duration-200 shadow-[0_16px_45px_rgba(0,0,0,0.35)]">
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-yellow-500/70 to-transparent" />
-              <p className="text-yellow-500 text-[0.68rem] font-semibold tracking-[0.2em] uppercase mb-3">EP</p>
-              <h3 className="text-xl font-black mb-2 group-hover:text-yellow-300 transition-colors">Prophetic Declarations</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed mb-4">4-track EP available now. Choose your platform.</p>
-              <div className="mb-4 overflow-hidden rounded-xl border border-zinc-700/80 bg-zinc-900/60">
-                <iframe
-                  title="Prophetic Declarations Spotify Embed"
-                  src="https://open.spotify.com/embed/album/4j3nWINWNwY8dfoORZgGD0?utm_source=generator&si=5b03f7b1074d4c12"
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
-                  allowFullScreen
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                  style={{ borderRadius: '12px' }}
-                  className="block"
-                />
-              </div>
-              <p className="text-[0.65rem] uppercase tracking-[0.16em] text-zinc-500 mb-3">Stream On</p>
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <a href="https://music.apple.com/gb/album/prophetic-declarations-ep/1895711445" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Apple</a>
-                <a href="https://open.spotify.com/album/4j3nWINWNwY8dfoORZgGD0" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Spotify</a>
-                <a href="http://www.youtube.com/@BigChase_Music" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">YouTube</a>
-                <a href="https://audiomack.com/bigchase_music" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Audiomack</a>
-                <a href="https://tidal.com/artist/78709665/u" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">TIDAL</a>
-                <a href="https://link.deezer.com/s/33eoGfO2xOvTszYk2DbwT" target="_blank" rel="noreferrer" className="rounded-lg border border-zinc-700/90 bg-zinc-900/70 px-3 py-2 text-center font-medium text-zinc-200 hover:border-yellow-600/70 hover:text-yellow-300 transition-colors">Deezer</a>
-              </div>
-            </div>
+      {/* ── BOOKING CTA ── */}
+      <section className="px-6 pb-24">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 rounded-3xl border border-zinc-800 bg-zinc-950/70 p-8 text-center md:flex-row md:text-left">
+          <div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.35em] text-yellow-500">Bookings & Press</p>
+            <h2 className="text-2xl font-black tracking-tight">Bring BigChase Music to your event</h2>
+            <p className="mt-2 text-sm text-zinc-400">Churches, concerts, conferences, features and interviews.</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link to="/contact" className="rounded-full bg-yellow-500 px-6 py-3 font-bold text-black transition-colors hover:bg-yellow-400">
+              Book Now
+            </Link>
+            <Link to="/press" className="rounded-full border border-zinc-600 px-6 py-3 font-semibold text-zinc-200 transition-colors hover:border-yellow-500 hover:text-yellow-300">
+              Press Kit
+            </Link>
           </div>
         </div>
       </section>
