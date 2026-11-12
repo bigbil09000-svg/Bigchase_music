@@ -5,6 +5,7 @@ import dshCoverWebp from '../assets/Untitled.webp'
 import dshCoverPng from '../assets/Untitled.png'
 import epCoverWebp from '../assets/design.webp'
 import epCoverPng from '../assets/design (1).png'
+import albumCover from '../assets/a-new-beginning.jpg'
 
 export const SITE_URL = 'https://bigchasemusic.com'
 export const CONTACT_EMAIL = 'contact@bigchasemusic.com'
@@ -36,6 +37,39 @@ export const SOCIALS = [
   { key: 'spotify', label: 'Spotify', href: PROFILES.spotify },
   { key: 'apple', label: 'Apple Music', href: PROFILES.apple },
 ]
+
+// Upcoming album. Before `releaseDate` the site shows a pre-order countdown;
+// after it, the same blocks switch to "Out Now" automatically.
+export const upcoming = {
+  id: 'a-new-beginning',
+  title: 'A New Beginning',
+  type: 'Album',
+  releaseDate: '2026-11-27T08:00:00Z',
+  releaseLabel: 'November 27, 2026',
+  shortDate: 'Nov 27',
+  cover: { src: albumCover },
+  preorder: 'https://music.apple.com/us/album/a-new-beginning/6833264337?uo=4&app=itunes',
+  blurb:
+    'The new album from BigChase Music — 14 tracks of faith, fire and fresh starts. Pre-order now on Apple Music and it lands in your library the moment it drops.',
+  tracks: [
+    'Glory Fills',
+    'Christ in Me',
+    "Don't Stop Here 2.0",
+    'Growing Unto Maturity',
+    'Tongues of Fire',
+    'Fruits of The Spirit',
+    'Your Name',
+    'Fullness',
+    'Rise Again',
+    'Recreate My World',
+    'Keep Movin',
+    'Power of Attorney',
+    'Book of My Life',
+    'Book of My Life (Bonus)',
+  ],
+}
+
+export const isReleased = (date = upcoming.releaseDate) => Date.now() >= new Date(date).getTime()
 
 export const releases = [
   {

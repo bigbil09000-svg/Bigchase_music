@@ -2,7 +2,7 @@
 // to bake per-page tags into each static HTML file for link previews and search engines.
 
 export const DEFAULT_DESCRIPTION =
-  'BigChase Music — independent gospel hip-hop. Stream Guiding Lighting, Don\'t Stop Here and the Prophetic Declarations EP on Spotify, Apple Music, YouTube and more.'
+  'BigChase Music — independent gospel hip-hop. New album A New Beginning out November 27 — pre-order now on Apple Music. Stream Guiding Lighting, Don\'t Stop Here and Prophetic Declarations.'
 
 export const pageMeta = {
   '': {
@@ -12,7 +12,7 @@ export const pageMeta = {
   music: {
     title: 'Music | BigChase Music',
     description:
-      'Stream every BigChase Music release — Guiding Lighting, Don\'t Stop Here and the Prophetic Declarations EP — on Spotify, Apple Music, YouTube, Audiomack, TIDAL and Deezer.',
+      'Pre-order the new album A New Beginning (Nov 27) and stream every BigChase Music release — Guiding Lighting, Don\'t Stop Here and the Prophetic Declarations EP — on Spotify, Apple Music, YouTube, Audiomack, TIDAL and Deezer.',
   },
   about: {
     title: 'About | BigChase Music',

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { releases, ARTIST, CONTACT_EMAIL, SOCIALS } from '../data/site'
+import { releases, ARTIST, CONTACT_EMAIL, SOCIALS, upcoming, isReleased } from '../data/site'
 import { ReleaseCover } from '../components/StreamLinks'
 import Icon from '../components/Icons'
 import usePageMeta from '../hooks/usePageMeta'
@@ -13,6 +13,7 @@ const LONG_BIO = [
 ]
 
 const DOWNLOADS = [
+  { label: 'A New Beginning — Album Cover (JPG)', href: '/press/a-new-beginning-cover.jpg' },
   { label: 'Logo (PNG)', href: '/press/bigchase-music-logo.png' },
   { label: "Don't Stop Here — Cover (JPG)", href: '/press/dont-stop-here-cover.jpg' },
   { label: 'Prophetic Declarations — Cover (JPG)', href: '/press/prophetic-declarations-cover.jpg' },
@@ -27,8 +28,10 @@ export default function Press() {
     ['Artist', ARTIST.name],
     ['Genre', 'Gospel Hip-Hop'],
     ['Label', 'Independent'],
-    ['Latest Release', `${releases[0].title} (${releases[0].type})`],
-    ['Catalogue', `${singles} singles · ${eps} EP`],
+    isReleased()
+      ? ['Latest Release', `${upcoming.title} (Album, ${upcoming.tracks.length} tracks)`]
+      : ['New Album', `${upcoming.title} — out ${upcoming.releaseLabel}`],
+    ['Catalogue', `1 album · ${singles} singles · ${eps} EP`],
     ['Booking', CONTACT_EMAIL],
   ]
 
@@ -78,7 +81,14 @@ export default function Press() {
 
         {/* Releases */}
         <h2 className="mb-6 mt-16 text-xs font-bold uppercase tracking-[0.3em] text-yellow-400">Releases</h2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+          <a href={upcoming.preorder} target="_blank" rel="noreferrer" className="group">
+            <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
+              <img src={upcoming.cover.src} alt={`${upcoming.title} album cover`} className="block aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
+            <p className="mt-3 font-bold group-hover:text-yellow-300">{upcoming.title}</p>
+            <p className="text-xs uppercase tracking-widest text-zinc-500">Album · {isReleased() ? 'Out Now' : upcoming.shortDate}</p>
+          </a>
           {releases.map(r => (
             <Link key={r.id} to={`/music#${r.id}`} className="group">
               <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
@@ -92,7 +102,7 @@ export default function Press() {
 
         {/* Downloads */}
         <h2 className="mb-6 mt-16 text-xs font-bold uppercase tracking-[0.3em] text-yellow-400">Downloads</h2>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2">
           {DOWNLOADS.map(d => (
             <a
               key={d.href}

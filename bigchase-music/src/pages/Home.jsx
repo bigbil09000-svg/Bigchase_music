@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { releases, ARTIST } from '../data/site'
+import { releases, ARTIST, upcoming, isReleased } from '../data/site'
+import AlbumSpotlight from '../components/AlbumSpotlight'
 import StreamLinks, { SpotifyEmbed } from '../components/StreamLinks'
 import SocialLinks from '../components/SocialLinks'
 import Newsletter from '../components/Newsletter'
@@ -7,7 +8,7 @@ import usePageMeta from '../hooks/usePageMeta'
 
 export default function Home() {
   usePageMeta('')
-  const latest = releases[0]
+  const albumOut = isReleased()
 
   return (
     <>
@@ -22,17 +23,19 @@ export default function Home() {
           uplift, and move the soul.
         </p>
         <p className="mb-10 text-sm text-zinc-300">
-          <span className="mr-2 rounded-full bg-yellow-500/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-yellow-300">Out Now</span>
-          {latest.title} — {latest.type}
+          <span className="mr-2 rounded-full bg-yellow-500/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-yellow-300">
+            {albumOut ? 'Out Now' : `New Album · ${upcoming.shortDate}`}
+          </span>
+          {upcoming.title}
         </p>
         <div className="mb-10 flex flex-wrap justify-center gap-4">
           <a
-            href={latest.links.spotify}
+            href={upcoming.preorder}
             target="_blank"
             rel="noreferrer"
             className="rounded-full bg-yellow-500 px-8 py-3 font-bold tracking-wide text-black shadow-lg shadow-yellow-500/20 transition-all duration-200 hover:bg-yellow-400"
           >
-            Stream "{latest.title}"
+            {albumOut ? `Listen to "${upcoming.title}"` : 'Pre-order the Album'}
           </a>
           <Link
             to="/music"
@@ -42,6 +45,13 @@ export default function Home() {
           </Link>
         </div>
         <SocialLinks />
+      </section>
+
+      {/* ── NEW ALBUM ── */}
+      <section className="px-4 pb-16 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <AlbumSpotlight />
+        </div>
       </section>
 
       {/* ── DIVIDER ── */}

@@ -1,6 +1,7 @@
 import { releases, PROFILES } from '../data/site'
 import StreamLinks, { ReleaseCover, SpotifyEmbed } from '../components/StreamLinks'
 import SocialLinks from '../components/SocialLinks'
+import AlbumSpotlight from '../components/AlbumSpotlight'
 import usePageMeta from '../hooks/usePageMeta'
 
 export default function Music() {
@@ -13,6 +14,7 @@ export default function Music() {
         <h1 className="mb-10 text-center text-3xl font-black tracking-tight sm:mb-14 sm:text-5xl">Music</h1>
 
         <div className="space-y-16">
+          <AlbumSpotlight showTracks />
           {releases.map((r, i) => (
             <article
               key={r.id}
@@ -29,7 +31,7 @@ export default function Music() {
 
                 <div>
                   <p className="mb-2 text-xs uppercase tracking-[0.28em] text-yellow-500">
-                    {i === 0 ? 'Latest Release' : r.type}
+                    {i === 0 ? 'Latest Single' : r.type}
                   </p>
                   <h2 className="mb-2 text-3xl font-black sm:text-4xl">{r.title}</h2>
                   <p className="mb-5 text-sm text-zinc-400">{r.type} · {r.status} · Available Now</p>

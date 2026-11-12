@@ -10,7 +10,7 @@ import Music from './pages/Music'
 import About from './pages/About'
 import Press from './pages/Press'
 import Contact from './pages/Contact'
-import { PROFILES, CONTACT_EMAIL, ARTIST } from './data/site'
+import { PROFILES, CONTACT_EMAIL, ARTIST, upcoming } from './data/site'
 
 // External redirect component — sends user to an outside URL
 function ExternalRedirect({ to }) {
@@ -128,6 +128,9 @@ export default function App() {
               <Route path="/tiktok" element={<ExternalRedirect to={PROFILES.tiktok} />} />
               <Route path="/spotify" element={<ExternalRedirect to={PROFILES.spotify} />} />
               <Route path="/apple" element={<ExternalRedirect to={PROFILES.apple} />} />
+              <Route path="/presave" element={<ExternalRedirect to={upcoming.preorder} />} />
+              <Route path="/preorder" element={<ExternalRedirect to={upcoming.preorder} />} />
+              <Route path="/album" element={<ExternalRedirect to={upcoming.preorder} />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>
