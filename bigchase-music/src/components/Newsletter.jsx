@@ -42,9 +42,12 @@ export default function Newsletter() {
         </p>
 
         {status === 'done' ? (
-          <p className="rounded-xl border border-yellow-700/50 bg-yellow-500/10 px-4 py-4 font-semibold text-yellow-200">
-            You're in! Watch your inbox for the next drop.
-          </p>
+          <div className="rounded-xl border border-yellow-700/50 bg-yellow-500/10 px-4 py-4">
+            <p className="font-semibold text-yellow-200">Almost there! Check your inbox.</p>
+            <p className="mt-1 text-sm text-zinc-300">
+              Tap the link in the email we just sent to confirm your subscription. Not there? Check your spam or promotions folder.
+            </p>
+          </div>
         ) : (
           <form onSubmit={onSubmit} className="mx-auto flex max-w-md flex-col gap-3 sm:flex-row">
             <input type="hidden" name="_subject" value="Newsletter signup — BigChase Music" />
