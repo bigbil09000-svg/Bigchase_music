@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-import { upcoming as album } from '../data/site'
+import { Link } from 'react-router-dom'
+import { slugify } from '../data/album'
+import { upcoming as album, preorderHref } from '../data/site'
 import Icon from './Icons'
 
 function useCountdown(target) {
@@ -34,7 +36,7 @@ function Countdown({ t }) {
 
 // Featured album block: pre-order + countdown before release, "Out Now" after.
 // `showTracks` adds the full tracklist (used on the Music page).
-export default function AlbumSpotlight({ showTracks = false }) {
+export default function AlbumSpotlight({ showTracks = false, showAlbumLink = true }) {
   const t = useCountdown(album.releaseDate)
   const released = t.done
 
@@ -46,7 +48,7 @@ export default function AlbumSpotlight({ showTracks = false }) {
       <div className="h-1 w-full bg-gradient-to-r from-yellow-900 via-yellow-400 to-yellow-900" />
       <div className="grid gap-8 p-5 sm:p-8 lg:grid-cols-[minmax(0,420px),1fr] lg:gap-12">
         <div className="mx-auto w-full max-w-md lg:max-w-none">
-          <a href={album.preorder} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.55)] ring-1 ring-yellow-500/20">
+          <a href={preorderHref} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.55)] ring-1 ring-yellow-500/20">
             <img src={album.cover.src} alt={`${album.title} album cover`} className="block h-auto w-full" />
           </a>
         </div>
@@ -69,7 +71,7 @@ export default function AlbumSpotlight({ showTracks = false }) {
 
           <div className="flex flex-wrap gap-3">
             <a
-              href={album.preorder}
+              href={preorderHref}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-yellow-500 px-7 py-3 font-bold text-black shadow-lg shadow-yellow-500/20 transition-colors hover:bg-yellow-400"
@@ -77,6 +79,14 @@ export default function AlbumSpotlight({ showTracks = false }) {
               <Icon name="apple" size={18} />
               {released ? 'Listen on Apple Music' : 'Pre-order on Apple Music'}
             </a>
+            {showAlbumLink && (
+              <Link
+                to={`/${album.id}`}
+                className="inline-flex items-center rounded-full border border-zinc-600 px-6 py-3 font-semibold text-zinc-200 transition-colors hover:border-yellow-500 hover:text-yellow-300"
+              >
+                Lyrics & Story
+              </Link>
+            )}
           </div>
 
           {showTracks && (
@@ -84,9 +94,11 @@ export default function AlbumSpotlight({ showTracks = false }) {
               <p className="mb-3 text-[0.7rem] font-bold uppercase tracking-[0.35em] text-yellow-500/90">Tracklist</p>
               <ol className="grid gap-x-8 gap-y-1 text-sm sm:grid-cols-2">
                 {album.tracks.map((name, i) => (
-                  <li key={name} className="flex gap-3 border-b border-zinc-800/80 py-2 text-zinc-300">
-                    <span className="w-5 text-right tabular-nums text-zinc-500">{i + 1}</span>
-                    {name}
+                  <li key={name} className="border-b border-zinc-800/80">
+                    <Link to={`/${album.id}#${slugify(name)}`} className="flex gap-3 py-2 text-zinc-300 transition-colors hover:text-yellow-300">
+                      <span className="w-5 text-right tabular-nums text-zinc-500">{i + 1}</span>
+                      {name}
+                    </Link>
                   </li>
                 ))}
               </ol>

@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { FORMSPREE_URL } from '../data/site'
+import { FORMSPREE_URL, KIT_FORM_ID } from '../data/site'
 
-// Fan email signup. Submissions arrive in the Formspree inbox tagged "Newsletter signup".
+// Fan email signup. Goes to the Kit mailing list when KIT_FORM_ID is set,
+// otherwise to the Formspree inbox tagged "Newsletter signup".
 export default function Newsletter() {
   const [status, setStatus] = useState('idle') // idle | sending | done | error
 
@@ -9,11 +10,15 @@ export default function Newsletter() {
     e.preventDefault()
     setStatus('sending')
     try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        body: new FormData(e.currentTarget),
-        headers: { Accept: 'application/json' },
-      })
+      const form = new FormData(e.currentTarget)
+      if (form.get('_gotcha')) { setStatus('done'); return }
+      const res = KIT_FORM_ID
+        ? await fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`, {
+            method: 'POST',
+            body: new URLSearchParams({ email_address: form.get('email') }),
+            headers: { Accept: 'application/json' },
+          })
+        : await fetch(FORMSPREE_URL, { method: 'POST', body: form, headers: { Accept: 'application/json' } })
       if (!res.ok) throw new Error('Request failed')
       setStatus('done')
     } catch {

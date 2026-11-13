@@ -26,7 +26,7 @@ const home = pageMeta['']
 const escapeAttr = s => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
 
 function withMeta(route) {
-  const { title, description } = pageMeta[route]
+  const { title, description, image } = pageMeta[route]
   const url = `${SITE_URL}/${route}/`
   let html = indexHtml
     .replaceAll(`<title>${home.title}</title>`, `<title>${title}</title>`)
@@ -35,6 +35,13 @@ function withMeta(route) {
     .replaceAll(`content="${home.description}"`, `content="${escapeAttr(description)}"`)
     .replace(`<link rel="canonical" href="${SITE_URL}/" />`, `<link rel="canonical" href="${url}" />`)
     .replace(`<meta property="og:url" content="${SITE_URL}/" />`, `<meta property="og:url" content="${url}" />`)
+  if (image) {
+    html = html
+      .replaceAll(`${SITE_URL}/og-image.jpg`, `${SITE_URL}${image.path}`)
+      .replace('<meta property="og:image:width" content="1200" />', `<meta property="og:image:width" content="${image.width}" />`)
+      .replace('<meta property="og:image:height" content="630" />', `<meta property="og:image:height" content="${image.height}" />`)
+      .replace(/<meta property="og:image:alt" content="[^"]*" \/>/, `<meta property="og:image:alt" content="${escapeAttr(title)} cover art" />`)
+  }
   if (!html.includes(`<title>${title}</title>`)) {
     throw new Error(`Could not inject meta for /${route} — check index.html title matches pageMeta['']`)
   }

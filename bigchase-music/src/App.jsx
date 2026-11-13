@@ -10,11 +10,21 @@ import Music from './pages/Music'
 import About from './pages/About'
 import Press from './pages/Press'
 import Contact from './pages/Contact'
-import { PROFILES, CONTACT_EMAIL, ARTIST, upcoming } from './data/site'
+import Album from './pages/Album'
+import { PROFILES, CONTACT_EMAIL, ARTIST, upcoming, CLOUDFLARE_ANALYTICS_TOKEN } from './data/site'
 
 // External redirect component — sends user to an outside URL
+// With analytics on, wait briefly so the visit is recorded before leaving.
 function ExternalRedirect({ to }) {
-  useEffect(() => { window.location.replace(to) }, [to])
+  useEffect(() => {
+    const go = () => window.location.replace(to)
+    if (!CLOUDFLARE_ANALYTICS_TOKEN) { go(); return }
+    const max = setTimeout(go, 1500)
+    const onLoad = () => setTimeout(go, 500)
+    if (document.readyState === 'complete') onLoad()
+    else window.addEventListener('load', onLoad, { once: true })
+    return () => { clearTimeout(max); window.removeEventListener('load', onLoad) }
+  }, [to])
   return (
     <div className="flex min-h-[50vh] flex-col items-center justify-center gap-3 text-zinc-400">
       <div className="h-8 w-8 animate-spin rounded-full border-2 border-yellow-500 border-t-transparent" />
@@ -109,6 +119,7 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/press" element={<Press />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/a-new-beginning" element={<Album />} />
 
               {/* ── Short branded URLs ── */}
               {/* Internal redirects */}

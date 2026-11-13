@@ -9,8 +9,16 @@ import albumCover from '../assets/a-new-beginning.jpg'
 
 export const SITE_URL = 'https://bigchasemusic.com'
 export const CONTACT_EMAIL = 'contact@bigchasemusic.com'
-// Formspree endpoint used by the contact form and the newsletter signup.
+// Formspree endpoint used by the contact form (and the newsletter signup until Kit is connected).
 export const FORMSPREE_URL = 'https://formspree.io/f/mgodegwk'
+
+// Kit (mailing list) form ID — the number in your Kit form's embed code, e.g. '1234567'.
+// Leave empty to keep sending signups to Formspree.
+export const KIT_FORM_ID = ''
+
+// Cloudflare Web Analytics token — from Cloudflare dashboard → Analytics & Logs → Web Analytics.
+// Leave empty to disable visitor stats.
+export const CLOUDFLARE_ANALYTICS_TOKEN = ''
 
 export const ARTIST = {
   name: 'BigChase Music',
@@ -68,6 +76,9 @@ export const upcoming = {
     'Book of My Life (Bonus)',
   ],
 }
+
+// Pre-order button target. With analytics on, buttons go via /presave/ so each click is counted.
+export const preorderHref = CLOUDFLARE_ANALYTICS_TOKEN ? '/presave/' : upcoming.preorder
 
 export const isReleased = (date = upcoming.releaseDate) => Date.now() >= new Date(date).getTime()
 
