@@ -17,7 +17,7 @@ const pages = Object.keys(pageMeta).filter(Boolean)
 const aliases = [
   'listen', 'ep', 'new', 'story', 'epk', 'book', 'booking',
   'yt', 'youtube', 'ig', 'instagram', 'tiktok', 'spotify', 'apple',
-  'presave', 'preorder', 'album',
+  'presave', 'preorder', 'album', 'a-new-beginning',
 ]
 
 const indexHtml = readFileSync(indexPath, 'utf8')

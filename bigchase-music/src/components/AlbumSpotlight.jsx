@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { slugify } from '../data/album'
 import { upcoming as album, preorderHref } from '../data/site'
 import Icon from './Icons'
 
@@ -36,7 +34,7 @@ function Countdown({ t }) {
 
 // Featured album block: pre-order + countdown before release, "Out Now" after.
 // `showTracks` adds the full tracklist (used on the Music page).
-export default function AlbumSpotlight({ showTracks = false, showAlbumLink = true }) {
+export default function AlbumSpotlight({ showTracks = false }) {
   const t = useCountdown(album.releaseDate)
   const released = t.done
 
@@ -79,14 +77,6 @@ export default function AlbumSpotlight({ showTracks = false, showAlbumLink = tru
               <Icon name="apple" size={18} />
               {released ? 'Listen on Apple Music' : 'Pre-order on Apple Music'}
             </a>
-            {showAlbumLink && (
-              <Link
-                to={`/${album.id}`}
-                className="inline-flex items-center rounded-full border border-zinc-600 px-6 py-3 font-semibold text-zinc-200 transition-colors hover:border-yellow-500 hover:text-yellow-300"
-              >
-                Lyrics & Story
-              </Link>
-            )}
           </div>
 
           {showTracks && (
@@ -94,11 +84,9 @@ export default function AlbumSpotlight({ showTracks = false, showAlbumLink = tru
               <p className="mb-3 text-[0.7rem] font-bold uppercase tracking-[0.35em] text-yellow-500/90">Tracklist</p>
               <ol className="grid gap-x-8 gap-y-1 text-sm sm:grid-cols-2">
                 {album.tracks.map((name, i) => (
-                  <li key={name} className="border-b border-zinc-800/80">
-                    <Link to={`/${album.id}#${slugify(name)}`} className="flex gap-3 py-2 text-zinc-300 transition-colors hover:text-yellow-300">
-                      <span className="w-5 text-right tabular-nums text-zinc-500">{i + 1}</span>
-                      {name}
-                    </Link>
+                  <li key={name} className="flex gap-3 border-b border-zinc-800/80 py-2 text-zinc-300">
+                    <span className="w-5 text-right tabular-nums text-zinc-500">{i + 1}</span>
+                    {name}
                   </li>
                 ))}
               </ol>

@@ -19,12 +19,6 @@ export const pageMeta = {
     description:
       'BigChase Music is an independent label creating purpose-driven gospel hip-hop that inspires, uplifts and connects with listeners worldwide.',
   },
-  'a-new-beginning': {
-    title: 'A New Beginning — New Album | BigChase Music',
-    description:
-      'A New Beginning, the new 14-track album from BigChase Music, out November 27, 2026. Pre-order on Apple Music, read the lyrics and the scripture behind every song.',
-    image: { path: '/press/a-new-beginning-cover.jpg', width: 1500, height: 1500 },
-  },
   press: {
     title: 'Press Kit (EPK) | BigChase Music',
     description:

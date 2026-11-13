@@ -10,7 +10,6 @@ import Music from './pages/Music'
 import About from './pages/About'
 import Press from './pages/Press'
 import Contact from './pages/Contact'
-import Album from './pages/Album'
 import Welcome from './pages/Welcome'
 import { PROFILES, CONTACT_EMAIL, ARTIST, upcoming, CLOUDFLARE_ANALYTICS_TOKEN } from './data/site'
 
@@ -120,7 +119,7 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/press" element={<Press />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/a-new-beginning" element={<Album />} />
+              <Route path="/a-new-beginning" element={<Navigate to="/music#a-new-beginning" replace />} />
               <Route path="/welcome" element={<Welcome />} />
 
               {/* ── Short branded URLs ── */}
