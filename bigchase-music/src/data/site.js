@@ -57,7 +57,7 @@ export const upcoming = {
   shortDate: 'Nov 27',
   cover: { src: albumCover },
   preorder: 'https://music.apple.com/us/album/a-new-beginning/6833264337?uo=4&app=itunes',
-  // DistroKid HyperFollow: pre-save on Spotify, Deezer, etc. before release; links to every platform after.
+  // DistroKid HyperFollow: Spotify pre-save (and Apple pre-add) before release; links to every platform after.
   presave: 'https://distrokid.com/hyperfollow/bigchasemusic/a-new-beginning',
   blurb:
     'The new album from BigChase Music — 14 tracks of faith, fire and fresh starts. Pre-save on Spotify or pre-order on Apple Music and it lands in your library the moment it drops.',

@@ -75,7 +75,7 @@ export default function AlbumSpotlight({ showTracks = false }) {
               className="inline-flex items-center gap-2 rounded-full bg-yellow-500 px-7 py-3 font-bold text-black shadow-lg shadow-yellow-500/20 transition-colors hover:bg-yellow-400"
             >
               <Icon name="spotify" size={18} />
-              {released ? 'Listen Now — All Platforms' : 'Pre-save on Spotify & More'}
+              {released ? 'Listen Now — All Platforms' : 'Pre-save on Spotify'}
             </a>
             <a
               href={preorderHref}
