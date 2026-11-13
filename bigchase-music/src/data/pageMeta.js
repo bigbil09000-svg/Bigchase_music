@@ -30,6 +30,11 @@ export const pageMeta = {
     description:
       'BigChase Music electronic press kit: bio, quick facts, logo and cover art downloads, and booking contact.',
   },
+  welcome: {
+    title: 'Welcome to the Family | BigChase Music',
+    description: 'Your subscription to BigChase Music is confirmed. Welcome to the family!',
+    noindex: true, // thank-you page: keep out of Google and the sitemap
+  },
   contact: {
     title: 'Contact & Booking | BigChase Music',
     description:

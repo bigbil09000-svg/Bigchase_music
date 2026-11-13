@@ -26,7 +26,7 @@ const home = pageMeta['']
 const escapeAttr = s => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
 
 function withMeta(route) {
-  const { title, description, image } = pageMeta[route]
+  const { title, description, image, noindex } = pageMeta[route]
   const url = `${SITE_URL}/${route}/`
   let html = indexHtml
     .replaceAll(`<title>${home.title}</title>`, `<title>${title}</title>`)
@@ -35,6 +35,9 @@ function withMeta(route) {
     .replaceAll(`content="${home.description}"`, `content="${escapeAttr(description)}"`)
     .replace(`<link rel="canonical" href="${SITE_URL}/" />`, `<link rel="canonical" href="${url}" />`)
     .replace(`<meta property="og:url" content="${SITE_URL}/" />`, `<meta property="og:url" content="${url}" />`)
+  if (noindex) {
+    html = html.replace('<meta name="theme-color"', '<meta name="robots" content="noindex" />\n    <meta name="theme-color"')
+  }
   if (image) {
     html = html
       .replaceAll(`${SITE_URL}/og-image.jpg`, `${SITE_URL}${image.path}`)
@@ -64,7 +67,7 @@ for (const route of aliases) {
 const today = new Date().toISOString().slice(0, 10)
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${['', ...pages].map(r => `  <url><loc>${SITE_URL}/${r ? `${r}/` : ''}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
+${['', ...pages.filter(r => !pageMeta[r].noindex)].map(r => `  <url><loc>${SITE_URL}/${r ? `${r}/` : ''}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
 </urlset>
 `
 writeFileSync(join(distDir, 'sitemap.xml'), sitemap)
