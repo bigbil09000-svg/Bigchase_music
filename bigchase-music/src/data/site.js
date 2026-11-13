@@ -14,11 +14,11 @@ export const FORMSPREE_URL = 'https://formspree.io/f/mgodegwk'
 
 // Kit (mailing list) form ID — the number in your Kit form's embed code, e.g. '1234567'.
 // Leave empty to keep sending signups to Formspree.
-export const KIT_FORM_ID = ''
+export const KIT_FORM_ID = '10184267'
 
 // Cloudflare Web Analytics token — from Cloudflare dashboard → Analytics & Logs → Web Analytics.
 // Leave empty to disable visitor stats.
-export const CLOUDFLARE_ANALYTICS_TOKEN = ''
+export const CLOUDFLARE_ANALYTICS_TOKEN = '8956e52e129c43e083860df2418cfe67'
 
 export const ARTIST = {
   name: 'BigChase Music',

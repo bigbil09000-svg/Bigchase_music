@@ -20,6 +20,11 @@ export default function Newsletter() {
           })
         : await fetch(FORMSPREE_URL, { method: 'POST', body: form, headers: { Accept: 'application/json' } })
       if (!res.ok) throw new Error('Request failed')
+      // Kit replies 200 even on failure; check its status field.
+      if (KIT_FORM_ID) {
+        const data = await res.json()
+        if (data.status !== 'success') throw new Error('Signup failed')
+      }
       setStatus('done')
     } catch {
       setStatus('error')
