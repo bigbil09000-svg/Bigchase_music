@@ -2,7 +2,7 @@
 // to bake per-page tags into each static HTML file for link previews and search engines.
 
 export const DEFAULT_DESCRIPTION =
-  'BigChase Music — independent gospel hip-hop. New album A New Beginning out November 27 — pre-order now on Apple Music. Stream Guiding Lighting, Don\'t Stop Here and Prophetic Declarations.'
+  'BigChase Music — independent gospel hip-hop. New album A New Beginning out November 27 — pre-save on Spotify or pre-order on Apple Music. Stream Guiding Lighting, Don\'t Stop Here and Prophetic Declarations.'
 
 export const pageMeta = {
   '': {

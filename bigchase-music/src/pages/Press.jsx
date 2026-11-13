@@ -82,7 +82,7 @@ export default function Press() {
         {/* Releases */}
         <h2 className="mb-6 mt-16 text-xs font-bold uppercase tracking-[0.3em] text-yellow-400">Releases</h2>
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-          <a href={upcoming.preorder} target="_blank" rel="noreferrer" className="group">
+          <a href={upcoming.presave} target="_blank" rel="noreferrer" className="group">
             <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
               <img src={upcoming.cover.src} alt={`${upcoming.title} album cover`} className="block aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
             </div>

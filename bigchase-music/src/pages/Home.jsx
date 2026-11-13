@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { releases, ARTIST, upcoming, isReleased, preorderHref } from '../data/site'
+import { releases, ARTIST, upcoming, isReleased, presaveHref } from '../data/site'
 import AlbumSpotlight from '../components/AlbumSpotlight'
 import StreamLinks, { SpotifyEmbed } from '../components/StreamLinks'
 import SocialLinks from '../components/SocialLinks'
@@ -30,12 +30,12 @@ export default function Home() {
         </p>
         <div className="mb-10 flex flex-wrap justify-center gap-4">
           <a
-            href={preorderHref}
+            href={presaveHref}
             target="_blank"
             rel="noreferrer"
             className="rounded-full bg-yellow-500 px-8 py-3 font-bold tracking-wide text-black shadow-lg shadow-yellow-500/20 transition-all duration-200 hover:bg-yellow-400"
           >
-            {albumOut ? `Listen to "${upcoming.title}"` : 'Pre-order the Album'}
+            {albumOut ? `Listen to "${upcoming.title}"` : 'Pre-save the Album'}
           </a>
           <Link
             to="/music"

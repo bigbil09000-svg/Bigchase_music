@@ -57,8 +57,10 @@ export const upcoming = {
   shortDate: 'Nov 27',
   cover: { src: albumCover },
   preorder: 'https://music.apple.com/us/album/a-new-beginning/6833264337?uo=4&app=itunes',
+  // DistroKid HyperFollow: pre-save on Spotify, Deezer, etc. before release; links to every platform after.
+  presave: 'https://distrokid.com/hyperfollow/bigchasemusic/a-new-beginning',
   blurb:
-    'The new album from BigChase Music — 14 tracks of faith, fire and fresh starts. Pre-order now on Apple Music and it lands in your library the moment it drops.',
+    'The new album from BigChase Music — 14 tracks of faith, fire and fresh starts. Pre-save on Spotify or pre-order on Apple Music and it lands in your library the moment it drops.',
   tracks: [
     'Glory Fills',
     'Christ in Me',
@@ -77,8 +79,10 @@ export const upcoming = {
   ],
 }
 
-// Pre-order button target. With analytics on, buttons go via /presave/ so each click is counted.
-export const preorderHref = CLOUDFLARE_ANALYTICS_TOKEN ? '/presave/' : upcoming.preorder
+// Button targets. With analytics on, buttons go via our short links so each click is counted:
+// /presave/ → DistroKid HyperFollow (all platforms), /preorder/ → Apple Music pre-order.
+export const presaveHref = CLOUDFLARE_ANALYTICS_TOKEN ? '/presave/' : upcoming.presave
+export const preorderHref = CLOUDFLARE_ANALYTICS_TOKEN ? '/preorder/' : upcoming.preorder
 
 export const isReleased = (date = upcoming.releaseDate) => Date.now() >= new Date(date).getTime()
 

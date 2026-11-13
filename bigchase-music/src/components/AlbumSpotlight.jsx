@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { upcoming as album, preorderHref } from '../data/site'
+import { upcoming as album, preorderHref, presaveHref } from '../data/site'
 import Icon from './Icons'
 
 function useCountdown(target) {
@@ -46,7 +46,7 @@ export default function AlbumSpotlight({ showTracks = false }) {
       <div className="h-1 w-full bg-gradient-to-r from-yellow-900 via-yellow-400 to-yellow-900" />
       <div className="grid gap-8 p-5 sm:p-8 lg:grid-cols-[minmax(0,420px),1fr] lg:gap-12">
         <div className="mx-auto w-full max-w-md lg:max-w-none">
-          <a href={preorderHref} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.55)] ring-1 ring-yellow-500/20">
+          <a href={presaveHref} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.55)] ring-1 ring-yellow-500/20">
             <img src={album.cover.src} alt={`${album.title} album cover`} className="block h-auto w-full" />
           </a>
         </div>
@@ -61,7 +61,7 @@ export default function AlbumSpotlight({ showTracks = false }) {
           <h2 className="mb-4 text-4xl font-black tracking-tight sm:text-5xl">{album.title}</h2>
           <p className="mb-6 max-w-xl text-sm leading-relaxed text-zinc-300 sm:text-base">
             {released
-              ? `The new album from BigChase Music — ${album.tracks.length} tracks of faith, fire and fresh starts. Listen now on Apple Music.`
+              ? `The new album from BigChase Music — ${album.tracks.length} tracks of faith, fire and fresh starts. Listen now on your favorite platform.`
               : album.blurb}
           </p>
 
@@ -69,13 +69,22 @@ export default function AlbumSpotlight({ showTracks = false }) {
 
           <div className="flex flex-wrap gap-3">
             <a
-              href={preorderHref}
+              href={presaveHref}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-yellow-500 px-7 py-3 font-bold text-black shadow-lg shadow-yellow-500/20 transition-colors hover:bg-yellow-400"
             >
+              <Icon name="spotify" size={18} />
+              {released ? 'Listen Now — All Platforms' : 'Pre-save on Spotify & More'}
+            </a>
+            <a
+              href={preorderHref}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-600 px-6 py-3 font-semibold text-zinc-200 transition-colors hover:border-yellow-500 hover:text-yellow-300"
+            >
               <Icon name="apple" size={18} />
-              {released ? 'Listen on Apple Music' : 'Pre-order on Apple Music'}
+              {released ? 'Apple Music' : 'Pre-order on Apple Music'}
             </a>
           </div>
 

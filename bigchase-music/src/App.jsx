@@ -140,9 +140,9 @@ export default function App() {
               <Route path="/tiktok" element={<ExternalRedirect to={PROFILES.tiktok} />} />
               <Route path="/spotify" element={<ExternalRedirect to={PROFILES.spotify} />} />
               <Route path="/apple" element={<ExternalRedirect to={PROFILES.apple} />} />
-              <Route path="/presave" element={<ExternalRedirect to={upcoming.preorder} />} />
+              <Route path="/presave" element={<ExternalRedirect to={upcoming.presave} />} />
               <Route path="/preorder" element={<ExternalRedirect to={upcoming.preorder} />} />
-              <Route path="/album" element={<ExternalRedirect to={upcoming.preorder} />} />
+              <Route path="/album" element={<ExternalRedirect to={upcoming.presave} />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>
